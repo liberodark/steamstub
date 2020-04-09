@@ -43,7 +43,7 @@ def decrypt_paylad(header, key):
 
 
 def decrypt_code(header):
-    if header["Flags"] & 0x4 != 0x4:  # если не зашифрованно, то и расшифровывать не нужно
+    if header["Flags"] & 0x4 != 0x4:  # if not encrypted, then no need to decrypt
         buff = b""
         section = binary.section_from_virtual_address(header["CodeSectionVirtualAddress"] + header["ImageBase"])
 
@@ -77,13 +77,13 @@ def parse_arguments_and_init_globals():
 
 def main():
     parse_arguments_and_init_globals()
-    header, key = parse_headers(steam_h.offset)  # парсинг заголовков стима
+    header, key = parse_headers(steam_h.offset)  # Steam header parsing
 
-#    decrypt_paylad(header, key)  # просто посмотреть, что там # ничего интересного
+#    decrypt_paylad(header, key)  # just see what's there # nothing interesting
 
-#    unpack_drmp(header)  # распаковка библиотеки защиты от дебага
+#    unpack_drmp(header)  # unpacking the debug protection library
 
-    decrypt_code(header)  # собственно декрипт и перезапись кода игры
+    decrypt_code(header)  # actually decrypt and rewrite the game code
 
 
 main()
