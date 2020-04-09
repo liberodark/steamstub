@@ -6,3 +6,6 @@ a python steamless reimplementation
 
 ## How to use :
 `python pyUnstub.py game 3_0 or 3_1`
+
+
+By mexahotabop & Alex
