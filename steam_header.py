@@ -4,8 +4,8 @@ import construct as c
 class v3_1:
 
     def __init__(self):
-        self.signature = 0xc0dec0df  # сигнатура для проверки дешифровки
-        self.offset = 0xd0  # оффсет из самого начала функции расшифровки где xmm
+        self.signature = 0xc0dec0df  # decryption verification signature
+        self.offset = 0xd0  # offset from the very beginning of the decryption function where xmm
         self.header = c.Struct(
                                 "Signature" / c.Int32ul,
                                 "ImageBase" / c.Int64ul,
