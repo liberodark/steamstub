@@ -1,5 +1,5 @@
 # Steamstub
-
+a python steamless reimplementation
 
 ## Install Deps :
 `pip install construct lief pycryptodome`
