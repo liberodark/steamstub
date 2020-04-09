@@ -22,7 +22,7 @@ class Buffer:
 def decrypt_xtea(v1, v2, key, n=32):
     delta = 0x9E3779B9
     mask = 0xFFFFFFFF
-    summ = (delta * n) & mask  # полный копипаст из steamless
+    summ = (delta * n) & mask  # full copy-paste of steamless
     for i in range(n):
         v2 = (v2 - (((v1 << 4 ^ v1 >> 5) + v1) ^ (summ + key[summ >> 11 & 3]))) & mask
         summ = (summ - delta) & mask
