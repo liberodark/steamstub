@@ -51,7 +51,7 @@ def steam_xor(data, key=0):
 
     if key == 0:
         key = buff.get_int()
-    for i in range(int((buff.len() - buff.pos) / 4)):  # исходим из того, что всегда кратное 4
+    for i in range(int((buff.len() - buff.pos) / 4)):  # we assume that it is always a multiple of 4
         val = buff.get_int()
         buff_out += struct.pack("<I", key ^ val)
         key = val
