@@ -8,4 +8,4 @@ a python steamless reimplementation
 `python pyUnstub.py game 3_0 or 3_1`
 
 
-By mexahotabop & Alex
+By @mexahotabop & @Sektour
